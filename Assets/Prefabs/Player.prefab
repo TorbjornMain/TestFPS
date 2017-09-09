@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23774866381600096}
   - component: {fileID: 114470246904336160}
   - component: {fileID: 114571788309182594}
+  - component: {fileID: 114736500949730348}
   - component: {fileID: 54771879072100354}
   - component: {fileID: 114782996654907784}
   - component: {fileID: 114342611699076464}
@@ -180,6 +181,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hudPrefab: {fileID: 114817001532057338, guid: 266198a8214ce52439bf68f6f1a1d32a,
     type: 2}
+--- !u!114 &114736500949730348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881174520232990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a97851017056541a4fbe1ae7a25be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114782996654907784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,7 +216,7 @@ MonoBehaviour:
   jumpForce: 5
   angLimit: 80
   turnRate: 100
-  cameraPrefab: {fileID: 1047155871949698, guid: 1b4ca791d71f46a42a0452d253ae3de8,
+  cameraPrefab: {fileID: 1369984124927174, guid: ff8b1465fc9396a418ff7e85a7536f0e,
     type: 2}
 --- !u!136 &136108085286782714
 CapsuleCollider:

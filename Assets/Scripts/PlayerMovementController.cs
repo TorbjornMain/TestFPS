@@ -33,12 +33,6 @@ public class PlayerMovementController : NetworkBehaviour {
 
     }
 	
-    void OnDestroy()
-    {
-        if (!isLocalPlayer)
-            return;
-        cam.transform.parent = null;
-    }
 
 	// Update is called once per frame
 	void Update () {
