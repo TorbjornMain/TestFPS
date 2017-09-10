@@ -24,14 +24,11 @@ GameObject:
   - component: {fileID: 23774866381600096}
   - component: {fileID: 114470246904336160}
   - component: {fileID: 114571788309182594}
-  - component: {fileID: 114736500949730348}
   - component: {fileID: 54771879072100354}
-  - component: {fileID: 114782996654907784}
-  - component: {fileID: 114342611699076464}
-  - component: {fileID: 114674944986219220}
-  - component: {fileID: 114462068950478870}
+  - component: {fileID: 114679290242135380}
+  - component: {fileID: 114602917379523794}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Third Person
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,31 +101,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &114342611699076464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1881174520232990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d25c600757861478e8302a1eeb56bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 1
---- !u!114 &114462068950478870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1881174520232990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f1291758f27204b801b2bf777e045a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnClearRadius: 0.5
-  maxSpawnAttempts: 100
 --- !u!114 &114470246904336160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,22 +115,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 15
-    i1: 126
-    i2: 201
-    i3: 172
-    i4: 4
-    i5: 234
-    i6: 146
-    i7: 100
-    i8: 40
-    i9: 64
-    i10: 238
-    i11: 24
+    i0: 108
+    i1: 97
+    i2: 232
+    i3: 253
+    i4: 164
+    i5: 26
+    i6: 173
+    i7: 244
+    i8: 248
+    i9: 61
+    i10: 96
+    i11: 49
     i12: 170
-    i13: 220
-    i14: 228
-    i15: 117
+    i13: 15
+    i14: 147
+    i15: 161
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114571788309182594
@@ -182,7 +154,7 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 0.8
---- !u!114 &114674944986219220
+--- !u!114 &114602917379523794
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -190,12 +162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881174520232990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3253d7f3c9e18fb4ab5a5d814f886b4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 96f1291758f27204b801b2bf777e045a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudPrefab: {fileID: 114817001532057338, guid: 266198a8214ce52439bf68f6f1a1d32a,
-    type: 2}
---- !u!114 &114736500949730348
+  spawnClearRadius: 0.5
+  maxSpawnAttempts: 100
+--- !u!114 &114679290242135380
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -203,38 +175,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881174520232990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a97851017056541a4fbe1ae7a25be5, type: 3}
+  m_Script: {fileID: 11500000, guid: af70c0bd5763682489c1e8254dd92d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114782996654907784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1881174520232990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024e36f7c59ab5b4f8e3ee5f19c5b67c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  cameraOffset: {x: 0, y: 0.5, z: 0}
-  accelerationRate: 0.898
-  airControl: 0.06
-  height: 1.1
-  radius: 0.4
-  jumpForce: 5
-  angLimit: 80
-  turnRate: 100
   cameraPrefab: {fileID: 1369984124927174, guid: ff8b1465fc9396a418ff7e85a7536f0e,
     type: 2}
+  cameraOffsetDirection: {x: 0, y: 0.2, z: -1}
+  cameraDistance: 10
+  camMinDist: 0.1
+  accelerationRate: 0.9
+  airControl: 0.1
+  height: 1.2
+  jumpForce: 10
+  angLimit: 80
+  turnRate: 45
+  speed: 10
 --- !u!136 &136108085286782714
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881174520232990}
-  m_Material: {fileID: 13400000, guid: 4faaec24032277040aa975f05edc4cc5, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

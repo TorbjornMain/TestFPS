@@ -7,10 +7,12 @@ using UnityEditor;
 
 [CustomEditor(typeof(Damageable))]
 public class DamageableEditor : Editor {
+    bool showResistances = true;
     public override void OnInspectorGUI()
     {
-
         Damageable curDam = (Damageable)target;
+        showResistances = EditorGUILayout.Foldout(showResistances, "Susceptabilites");
+        
         if(curDam.susceptability == null)
         {
             curDam.susceptability = new Dictionary<DamageType, float>();
@@ -20,12 +22,14 @@ public class DamageableEditor : Editor {
             }
         }
 
-        for (int i = 0; i < (int)DamageType.True; i++)
+        if (showResistances)
         {
-            curDam.susceptability[(DamageType)i] = EditorGUILayout.FloatField(((DamageType)i).ToString() + " Susceptability", curDam.susceptability[(DamageType)i]);
+            for (int i = 0; i < (int)DamageType.True; i++)
+            {
+                curDam.susceptability[(DamageType)i] = EditorGUILayout.FloatField(((DamageType)i).ToString() + " Susceptability", curDam.susceptability[(DamageType)i]);
+            }
+            EditorGUILayout.LabelField("");
         }
-
-        EditorGUILayout.LabelField("");
         curDam.MaxHealth = EditorGUILayout.DelayedFloatField("Max Health", curDam.MaxHealth);
         curDam.Health = EditorGUILayout.DelayedFloatField("Current Health", curDam.Health);
 

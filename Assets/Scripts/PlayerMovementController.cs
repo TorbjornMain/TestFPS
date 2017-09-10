@@ -11,6 +11,7 @@ public class PlayerMovementController : NetworkBehaviour {
     public float accelerationRate = 0.9f;
     public float airControl = 0.1f;
     public float height = 0.5f;
+    public float radius = 0.5f;
     public float jumpForce = 10;
     float camPitch = 0;
     public float angLimit = 80;
@@ -41,7 +42,7 @@ public class PlayerMovementController : NetworkBehaviour {
 
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         
-        if(Physics.Raycast(transform.position, -transform.up, out rc, height, 1<<LayerMask.NameToLayer("Terrain")))
+        if(Physics.Raycast(transform.position, -transform.up, out rc, height))
         {
             grounded = true;
         }
@@ -61,8 +62,8 @@ public class PlayerMovementController : NetworkBehaviour {
         cam.transform.localRotation = Quaternion.Euler(camPitch, 0, 0);
 
         input *= speed;
-        input.y = rb.velocity.y;
-        rb.velocity = Vector3.Lerp(rb.velocity, transform.rotation * input, accelerationRate * (grounded ? 1 : airControl));
+        input.y = 0;
+        rb.AddForce(((transform.rotation * input) - new Vector3(rb.velocity.x, 0, rb.velocity.z)) * accelerationRate * (grounded ? 1 : airControl), ForceMode.VelocityChange);
         rb.angularVelocity = Vector3.zero;
 	}
 }
